@@ -1107,6 +1107,9 @@ impl Config {
     }
 
     pub fn get_option(k: &str) -> String {
+        if key == "enable-lan-discovery" {
+        return "N".to_string(); 
+    }
         get_or(
             &OVERWRITE_SETTINGS,
             &CONFIG2.read().unwrap().options,
